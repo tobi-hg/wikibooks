@@ -78,7 +78,7 @@ public class WikiBooks {
       WikiBooksAlerts.printEmptyAlert();
     } else {
       Persistency binaryPersistency = new BinaryPersistency();
-      binaryPersistency.save(zk, "Zettelkasten.txt");
+      binaryPersistency.save(zk, "BinaryZettelkasten.txt");
       return true;
     }
     return false;
@@ -89,9 +89,9 @@ public class WikiBooks {
    */
   public static boolean loadWikibook() {
       Persistency binaryPersistency = new BinaryPersistency();
-      File f = new File("Zettelkasten.txt");
+      File f = new File("BinaryZettelkasten.txt");
       if (f.exists()) {
-        zk = binaryPersistency.load("Zettelkasten.txt");
+        zk = binaryPersistency.load("BinaryZettelkasten.txt");
         return true;
       } else {
         WikiBooksAlerts.printFileDoesNotExist();
